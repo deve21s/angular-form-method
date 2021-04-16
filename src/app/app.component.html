@@ -8,3 +8,12 @@
   
 </form>
 <p>{{ myform.status | json}}</p> -->
+
+<form [formGroup]="myform" (ngSubmit)="onsubmit()">
+    <label for="name">Name: </label>
+    <input id="name" formControlName="name">
+    <label for="email">Email: </label>
+    <input id="email" formControlName="email">
+    <button type="submit" [disabled]="!myform.valid">submit</button>
+</form>
+<pre>{{myform.value | json}}</pre>
