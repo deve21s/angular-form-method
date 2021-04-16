@@ -14,6 +14,7 @@
     <input id="name" formControlName="name">
     <label for="email">Email: </label>
     <input id="email" formControlName="email">
+    <button (click)="addPhone()">add phone</button>
     <button type="submit" [disabled]="!myform.valid">submit</button>
 </form>
 <pre>{{myform.value | json}}</pre>

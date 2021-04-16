@@ -18,8 +18,13 @@ export class AppComponent{
 
   myform = new FormGroup({
     name : new FormControl('',Validators.required),
-    email : new FormControl('',[Validators.email,Validators.required])
+    email : new FormControl('',[Validators.email,Validators.required]),
+    phone : new FormArray([])
   })
+
+  addPhone(){
+    console.warn('click')
+  }
 
   onsubmit(){
     console.info(this.myform.value)
