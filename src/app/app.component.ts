@@ -19,11 +19,12 @@ export class AppComponent{
   myform = new FormGroup({
     name : new FormControl('',Validators.required),
     email : new FormControl('',[Validators.email,Validators.required]),
-    phone : new FormArray([])
+    phones : new FormArray([])
   })
 
   addPhone(){
-    console.warn('click')
+    const emails = this.myform.get('phones') as FormArray
+    emails.push(new FormControl(''))
   }
 
   onsubmit(){
